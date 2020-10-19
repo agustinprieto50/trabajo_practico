@@ -13,6 +13,7 @@ class Partida():
 
     @palabra.setter
     def palabra(self, value):
+        # Devuelve un error si la palabra esta vacia
         if value == "":
             raise ValueError("Error")
         self._palabra = list(value.upper())
