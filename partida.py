@@ -29,6 +29,8 @@ class Partida():
         if value < 1 or value > 10:
             raise ValueError("Error")
         self._intentos = value * len(self._palabra)
+        if self._intentos < 1:
+            raise ValueError("Error")
 
     @property
     def tipo_palabra(self):

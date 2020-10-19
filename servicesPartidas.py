@@ -23,26 +23,18 @@ class ServicesPartidas():
 
     def intentar_letra(self, partida, letra):
         letra = letra.upper()
-        aciertos = []
         while partida._intentos > 0:
             for index in range(len(partida._palabra)):
                 if partida._palabra[index] == letra:
                     partida._palabra_aciertos[index] = letra
-                    aciertos.append(letra)
             partida._intentos -= 1
-            return "Continua"
-        if len(partida._palabra_aciertos) == len(aciertos):
+            if (partida._palabra_aciertos != partida._palabra
+               and partida._intentos > 0):
+                return "Continua"
+        if partida._palabra_aciertos == partida._palabra:
             return "Gano"
-        if len(partida._palabra_aciertos) != len(aciertos):
+        if partida._palabra_aciertos != partida._palabra:
             return "Perdio"
-
-
-
-
-        
-         
-    
-
 
 #     def intentos(self, palabra, dificultad):
 #         intento = len(palabra) * dificultad
