@@ -2,4 +2,4 @@
 source = .
 
 omit =
-    */virtualenv/*
+    */virualenv/*
