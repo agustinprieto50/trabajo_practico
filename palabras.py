@@ -1,12 +1,7 @@
 class RepositorioPalabras():
-    repo_palabras = {1: {"palabra": "basket", "tipo_palabra": "deporte"},
-                     2: {"palabra": "futbol", "tipo_palabra": "deporte"},
-                     3: {"palabra": "tenis", "tipo_palabra": "deporte"},
-                     4: {"palabra": "lakers",
-                     "tipo_palabra": "Equipos de la NBA"},
-                     5: {"palabra": "celtics",
-                     "tipo_palabra": "Equipos de la NBA"},
-                     6: {"palabra": "heat",
-                     "tipo_palabra": "Equipos de la NBA"},
-                     7: {"palabra": "españa", "tipo_palabra": "Paises"},
-                     8: {"palabra": "canada", "tipo_palabra": "Paises"}}
+    repo_palabras = {1: {'palabra': 'palabra', 'tipo_palabra': 'tipo_palabra'},
+                     2: {'palabra': 'palabra1',
+                      'tipo_palabra': 'tipo_palabra'},
+                     3: {'palabra': 'palabra2', 
+                     'tipo_palabra': 'tipo_palabra'},
+                     4: {'palabra': 'palabra3', 'tipo_palabra': 'tipo_palabra'}}
