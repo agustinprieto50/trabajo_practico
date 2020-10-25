@@ -1,23 +1,23 @@
-from funciones import Functions
+from ahorcado import Ahorcado
+from partida_repo import PartidaRepositorio
 
 
 class Menu():
     def menu_juego(self):
-        print("\n\n1. Partida para un jugador")
+        print("\nBIENVENIDO AL JUEGO DEL AHORCADO!")
+        print("\nSeleccione el modo de juego que desea jugar.")
+        print("\n1. Partida para un jugador")
         print("2. Partida para 2 jugadores")
-        return int(input("Elija una opción: "))
+        return int(input("\nElija una opción: "))
 
 
 if __name__ == '__main__':
     menu = Menu()
-    servicios = Functions()
+    servicios = Ahorcado()
     while True:
         seleccion = menu.menu_juego()
         if seleccion == 1:
-            dificultad = int(input("Indique la dificultad: "))
-            palabra_elegida = Functions.select_palabra()
-            partida = Functions.juego(palabra_elegida, dificultad)
-        if seleccion < 1 or seleccion > 4:
-            break
-
-    
+            servicios.un_jugador()
+        if seleccion == 2:
+            servicios.dos_jugadores()
+            print("\nHistroial de partida: ", PartidaRepositorio.repo_partida)

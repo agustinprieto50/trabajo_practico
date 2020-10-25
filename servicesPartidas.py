@@ -31,12 +31,14 @@ class ServicesPartidas():
             for i in range(len(partida._palabra)):
                 if partida._palabra[i] == letter:
                     partida._palabra_aciertos[i] = letter
+            print(partida._palabra_aciertos)
             partida._intentos -= 1
             if (partida._palabra_aciertos != partida._palabra
                and partida._intentos > 0):
                 return "Continua"
-            if partida._palabra_aciertos == partida._palabra:
-                return "Gano"
+            if (partida._palabra_aciertos == partida._palabra
+               and partida._intentos > 0):
+                break
         if partida._palabra_aciertos == partida._palabra:
             return "Gano"
         return "Perdio"
