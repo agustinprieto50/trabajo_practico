@@ -6,11 +6,13 @@ class Ahorcado():
         servicios = ServicesPartidas()
         seguir = True
         while seguir is True:
-            let = str(input("Letra: "))
+            try:
+                let = str(input("Letra: "))
+            except StopIteration:
+                return
             if let == "salir":
                 break
             servicios.intentar_letra(partida, let)
-            print(partida._palabra_aciertos)
             if partida._palabra == partida._palabra_aciertos:
                 seguir = False
 
@@ -22,10 +24,8 @@ class Ahorcado():
         partida = servicios.iniciar_partida(nombre, intentos, palabra, "")
         self.pedir_letras(partida)
         if partida._palabra == partida._palabra_aciertos:
-            print("Gano. La palabra era ", partida._palabra)
             return True
         else:
-            print("Perdio. La palabra era ", partida._palabra)
             return True
 
     def dos_jugadores(self):
@@ -39,10 +39,7 @@ class Ahorcado():
             t1 = str(input("Tipo de palabra: "))
             partida1 = servicios.iniciar_partida(n1, dif, p1, t1)
             self.pedir_letras(partida1)
-            if partida1._palabra == partida1._palabra_aciertos:
-                print("Gano. La palabra era ", partida1._palabra)
-            else:
-                print("Perdio. La palabra era ", partida1._palabra)
+            servicios.add_partida(partida1)
         if count == 1:
             n2 = str(input("Ingrese el nombre del jugador 2: "))
             dif2 = int(input("Ingrese la dificultad: "))
@@ -50,8 +47,5 @@ class Ahorcado():
             t2 = str(input("Tipo de palabra: "))
             partida2 = servicios.iniciar_partida(n2, dif2, p2, t2)
             self.pedir_letras(partida2)
-            if partida2._palabra == partida2._palabra_aciertos:
-                print("Gano. La palabra era ", partida2._palabra)
-            else:
-                print("Perdio. La palabra era ", partida2._palabra)
+            servicios.add_partida(partida2)
         return True
