@@ -31,7 +31,6 @@ class ServicesPartidas():
             for i in range(len(partida._palabra)):
                 if partida._palabra[i] == letter:
                     partida._palabra_aciertos[i] = letter
-            print(partida._palabra_aciertos)
             partida._intentos -= 1
             if (partida._palabra_aciertos != partida._palabra
                and partida._intentos > 0):
@@ -42,6 +41,7 @@ class ServicesPartidas():
         if partida._palabra_aciertos == partida._palabra:
             return "Gano"
         return "Perdio"
+        partida.palabra_aciertos.clear()
 
     def add_partida(self, partida):
         lastKey = -1
