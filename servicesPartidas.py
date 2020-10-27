@@ -41,12 +41,11 @@ class ServicesPartidas():
         if partida._palabra_aciertos == partida._palabra:
             return "Gano"
         return "Perdio"
-        partida.palabra_aciertos.clear()
 
     def add_partida(self, partida):
         lastKey = -1
         for key in PartidaRepositorio.repo_partida:
             lastKey = key
         new = (lastKey) + 1
-        PartidaRepositorio.repo_partida[new] = partida.__dict__
+        PartidaRepositorio.repo_partida[new] = partida
         return new
